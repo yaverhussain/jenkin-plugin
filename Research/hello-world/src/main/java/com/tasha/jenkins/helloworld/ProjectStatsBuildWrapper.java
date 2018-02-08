@@ -33,6 +33,7 @@ public class ProjectStatsBuildWrapper extends BuildWrapper {
             public boolean tearDown(AbstractBuild build, BuildListener listener)
               throws IOException, InterruptedException
             {
+                System.out.print("Starting");
                 ProjectStats stats = buildStats(build.getWorkspace());
                 String report = generateReport(build.getProject().getDisplayName(), stats);
                 File artifactsDir = build.getArtifactsDir();
